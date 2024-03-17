@@ -10,7 +10,7 @@ FROM orders
 ORDER BY ship_country
 
 -- 3. сколько дней в среднем уходит на доставку товара в Германию (таблица orders, колонки order_date, shipped_date, ship_country)
-SELECT SUM(shipped_date - order_date) / COUNT(*) as day_away
+SELECT avg(shipped_date - order_date)
 FROM orders
 WHERE ship_country IN ('Germany')
 
